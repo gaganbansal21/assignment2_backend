@@ -5,12 +5,13 @@ const dataModel = new Schema({
   currentPrice : Number,
   model :String,
   tempprice : Number,
-  variant: [
+  variants: [
     {
       color: String,
-      imageUrl: String,
+      image: String,
     }
   ],
+  rating: Number
 });
 
 const productSchema = mongoose.model("productSchema", dataModel);

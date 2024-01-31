@@ -20,11 +20,15 @@ const port = process.env.PORT || 5000;
   const MONGODB_URL = "mongodb://gaganbansal021:M04IK5DmmUCu6D62@ac-vgl0mge-shard-00-00.zdole43.mongodb.net:27017,ac-vgl0mge-shard-00-01.zdole43.mongodb.net:27017,ac-vgl0mge-shard-00-02.zdole43.mongodb.net:27017/?ssl=true&replicaSet=atlas-j1flgd-shard-0&authSource=admin&retryWrites=true&w=majority"
 
   mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(()=>{
-//     productSchema.insertMany(SampleData);
-//     console.log('OEM data inserted successfully!');
-//   })
-   .then(() => {
+  // .then(() => {
+  //   // Delete existing data
+  //   return productSchema.deleteMany();
+  // })
+  // .then(() => {
+  //   // Insert new data
+  //   return productSchema.insertMany(SampleData);
+  // })
+  .then(() => {
     // Start your server after connecting to MongoDB and performing operations
     app.listen(port, () => {
       console.log(`Server running on port ${port}`);

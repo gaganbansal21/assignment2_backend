@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import productSchema from "../models/datamodel.js";
-
+import SampleData from '../models/dummyData.js';
 
 router.get("/", async (req, res) => {
     try {
@@ -13,6 +13,14 @@ router.get("/", async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 })
+// router.get("/data", async (req, res) => {
+//     try {
+//         res.json({SampleData});
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Internal Server Error');
+//     }
+// })
 
 router.get("/data", async (req, res) => {
     try {
